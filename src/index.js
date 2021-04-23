@@ -17,11 +17,12 @@ class App extends React.Component {
   }
 
   renderContent() {
-    if (this.state.errorMessage && !this.state.lat) {
-      return <Error message={this.state.errorMessage}/>
+    const { errorMessage, lat} = this.state
+    if (errorMessage && !lat) {
+      return <Error message={errorMessage}/>
     }
-    if (!this.state.errorMessage && this.state.lat) {
-      return <SeasonDisplay lat={this.state.lat}/>
+    if (!errorMessage && lat) {
+      return <SeasonDisplay lat={lat}/>
     }
     return <Spinner message="Please accept location request"/>
   }
