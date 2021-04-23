@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Error = props => <div>{props.message}</div>
+const Error = props => <h1>{props.message}</h1>
 
 Error.defaultProps = {
   message: "Oops, something went wrong!"
